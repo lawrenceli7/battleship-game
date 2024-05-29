@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`receiving hits caps number of hits at ship length 1`] = `
+Ship {
+  "hits": 3,
+  "length": 3,
+}
+`;
+
+exports[`receiving hits is sunk if number of hits equals ship length 1`] = `
+Ship {
+  "hits": 2,
+  "length": 2,
+}
+`;
+
+exports[`receiving hits keeps track of number of times hit 1`] = `
+Ship {
+  "hits": 4,
+  "length": 4,
+}
+`;
+
+exports[`ship length has correct length 1`] = `
+Ship {
+  "hits": 0,
+  "length": 4,
+}
+`;
+
+exports[`ship length has correct length 2`] = `
+Ship {
+  "hits": 0,
+  "length": 2,
+}
+`;
+
+exports[`ship length throws if length not between 2 and 5 1`] = `
+Ship {
+  "hits": 0,
+  "length": 2,
+}
+`;
+
+exports[`ship length throws if length not between 2 and 5 2`] = `
+Ship {
+  "hits": 0,
+  "length": 4,
+}
+`;
