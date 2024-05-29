@@ -1,28 +1,45 @@
 :root {
   --square-size: 40px;
+  --main-bg-color: #f0f0f0;
+  --board-bg-color: #ececec;
+  --border-color: #ddd;
+  --button-bg-color: #4caf50;
+  --button-hover-bg-color: #45a049;
+  --text-color: #333;
+  --title-color: #2c3e50;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: system-ui, Helvetica, Arial, sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 html,
 body {
   height: 100%;
+  background-color: var(--main-bg-color);
 }
 
 .container {
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  padding: 3rem 2rem 2rem 2rem;
+  padding: 2rem 1rem;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  color: var(--title-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 main {
-  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -31,20 +48,22 @@ main {
 
 button {
   font-size: 1rem;
-  width: fit-content;
-  padding: 0.5rem 1rem;
-  background-color: rgb(220, 220, 220);
-  border: 1px solid black;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--button-bg-color);
+  border: none;
   border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-h1 {
-  text-align: center;
-  font-size: 2.5rem;
+button:hover {
+  background-color: var(--button-hover-bg-color);
 }
 
 .player-name {
   font-size: 1.2rem;
+  color: var(--text-color);
 }
 
 .board-and-player {
@@ -64,30 +83,34 @@ h1 {
 .board {
   display: grid;
   grid-template-columns: repeat(10, var(--square-size));
+  background-color: var(--board-bg-color);
+  border: 1px solid var(--border-color);
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .square {
-  border: 1px solid white;
-  background-color: rgb(200, 200, 200);
+  border: 1px solid #fff;
+  background-color: #ccc;
   border-radius: 4px;
   width: var(--square-size);
   height: var(--square-size);
 }
 
 .ship {
-  background-color: rgb(100, 100, 100);
+  background-color: #555;
 }
 
 .miss {
-  background-color: rgb(84, 169, 214);
+  background-color: #54a9d6;
 }
 
 .hit {
-  background-color: red;
+  background-color: #e74c3c;
 }
 
 #game-over-modal[open] {
-  border: 2px solid black;
+  border: 2px solid #333;
   border-radius: 4px;
   padding: 2rem 4rem;
   margin: auto;
@@ -98,13 +121,14 @@ h1 {
 }
 
 #game-over-modal::backdrop {
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 #winner {
   font-size: 2rem;
   text-align: center;
+  color: var(--text-color);
 }
 
 @media (max-width: 1100px) {
